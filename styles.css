@@ -129,3 +129,123 @@ body {
 .menu-btn.open .menu-btn-burger::after {
   transform: rotate(-45deg) translate(35px, 35px);
 }
+
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+img:not(.logo) {
+  width: 100%;
+}
+.logo {
+  height: 40px;
+}
+
+img {
+  display: block;
+}
+
+nav {
+  background: var(--clr-white);
+  box-shadow: var(--light-shadow);
+}
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav-links a {
+  color: var(--clr-grey-3);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: var(--spacing);
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: var(--transition);
+}
+.nav-links a:hover {
+  background: var(--clr-primary-8);
+  color: var(--clr-primary-5);
+  padding-left: 1.5rem;
+}
+
+/*hide social icons and links*/
+.social-icons {
+  display: inline-flex;
+  margin-left: 0.5rem;
+}
+
+.social-icons li a {
+  padding: 0.5rem;
+  height: 0;
+  font-size: medium;
+
+  color: var(--clr-primary-6);
+  transition: var(--transition);
+}
+
+.social-icons li a:hover {
+  opacity: 0.5;
+  padding-left: 3px;
+}
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--transition);
+}
+/*added vis js*/
+.show-links {
+  height: 10rem;
+}
+
+/*Medis queries*/
+
+@media screen and (min-width: 800px) {
+  .center-nav {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+  }
+  .nav-header {
+    padding: 0;
+  }
+
+  /*hide nav toggle on large screen*/
+  .nav-toggle {
+    display: none;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+  }
+  .nav-links a {
+    padding: 0;
+    margin: 0 0.5rem;
+  }
+  .nav-links a:hover {
+    padding: 0;
+    background: transparent;
+  }
+  .social-icons {
+    display: flex;
+  }
+
+  .social-icons li {
+    height: auto;
+  }
+  .social-icons a {
+    margin: 0 0.5rem;
+    color: var(--clr-primary-5);
+    transition: var(--transition);
+  }
+  .social-icons a:hover {
+    color: var(--clr-primary-7);
+  }
+}
