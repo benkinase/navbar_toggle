@@ -40,6 +40,11 @@ Variables
   --clr-grey-10: hsl(210, 36%, 96%);
   --clr-white: #fff;
 
+  /*hamburger menu*/
+  --ham-color-1: rgb(146, 155, 163);
+  --ham-color-2: rgb(236, 199, 96);
+  --ham-color-3: hsl(189, 89%, 72%);
+
   --clr-black: #222;
   --ff-primary: "Roboto", sans-serif;
   --ff-secondary: "Open Sans", sans-serif;
@@ -50,4 +55,77 @@ Variables
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
   --fixed-width: 620px;
+}
+
+body {
+  font-family: var(--ff-secondary);
+  background: var(--clr-grey-10);
+  color: var(--clr-grey-1);
+  line-height: 1.5;
+  font-size: 0.8rem;
+}
+
+/*.nav-toggle starts*/
+.menu-btn {
+  position: relative;
+  width: 50px;
+  cursor: pointer;
+  height: 60px;
+  transition: all 0.5s ease-in-out;
+  /**border: .5rem solid coral;*/
+  display: flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.menu-btn:hover {
+  opacity: 0.7;
+}
+
+.menu-btn-burger {
+  width: 40px;
+  height: 5px;
+  background-color: var(--ham-color-3);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px var(--ham-color-1);
+  transition: all 0.5s ease-in-out;
+}
+
+.menu-btn-burger::before,
+.menu-btn-burger::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 5px;
+  background-color: var(--ham-color-2);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px var(--ham-color-1);
+  transition: all 0.5s ease-in-out;
+}
+
+/*separate the added bars:(Y-axis)*/
+.menu-btn-burger::before {
+  transform: translateY(-16px);
+}
+
+.menu-btn-burger::after {
+  transform: translateY(16px);
+}
+
+/*Animation*/
+/*targeting the .menu-btn-burger */
+.menu-btn.open .menu-btn-burger {
+  transform: translate(-50px);
+  background: transparent;
+  box-shadow: none;
+}
+
+/*targeting the .menu-btn-burger::before */
+.menu-btn.open .menu-btn-burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+/*targeting the .menu-btn-burger ::after */
+.menu-btn.open .menu-btn-burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
 }
