@@ -193,14 +193,14 @@ nav {
   opacity: 0.5;
   padding-left: 3px;
 }
-.nav-links {
+.nav-links-container {
   height: 0;
   overflow: hidden;
   transition: var(--transition);
 }
 /*added vis js*/
 .show-links {
-  height: 10rem;
+  height: 12rem;
 }
 
 /*Medis queries*/
@@ -222,9 +222,13 @@ nav {
   .nav-toggle {
     display: none;
   }
-  .nav-links {
+  .nav-links-container {
     height: auto;
     display: flex;
+  }
+
+  ul {
+    display: inline-flex;
   }
   .nav-links a {
     padding: 0;

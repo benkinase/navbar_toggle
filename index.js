@@ -1,5 +1,5 @@
 const menuBtn = document.querySelector(".menu-btn");
-const nav_links = document.querySelector(".nav-links");
+const nav_links = document.querySelector(".nav-links-container");
 
 //init menu-btn
 let isMenuOpen = false;
